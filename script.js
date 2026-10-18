@@ -53,4 +53,12 @@ window.addEventListener('storage', (e) => {
   resetTimer();
 });
 
+const clockEl = document.querySelector('.clock');
+
+function renderClock() {
+  clockEl.textContent = new Date().toLocaleTimeString('ko-KR', { hour12: false });
+}
+
 render();
+renderClock();
+setInterval(renderClock, 1000);
